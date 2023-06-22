@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "spfxdlg-client-side-solution",
+    "id": "a7d55ef1-b78e-470b-9cb4-31a0d2a19e3a",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.17.0-rc.1"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "spfxdlg description"
+      },
+      "longDescription": {
+        "default": "spfxdlg description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "spfxdlg Feature",
+        "description": "The feature that activates elements of the spfxdlg solution.",
+        "id": "ec186abd-5e76-4c47-a93c-fd9afbb48f07",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/spfxdlg.sppkg"
+  }
+}
