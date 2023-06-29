@@ -1,3 +1,7 @@
+@use 'sass:meta';
+
 .dialogTest {
   display: flex;
 }
+
+@include meta.load-css('./components/placeholder.scss');

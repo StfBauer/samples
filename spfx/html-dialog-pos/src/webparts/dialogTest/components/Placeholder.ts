@@ -1,3 +1,8 @@
+import PlaceholderButton from './PlaceHolderButton';
+
+import styles from '../DialogTestWebPart.module.scss';
+
+
 export default class Placeholder {
 
   private _container: HTMLElement;
@@ -29,10 +34,12 @@ export default class Placeholder {
     // The dialog content
     this._dialog = document.createElement("dialog");
     this._dialog.innerHTML = "<h1>This is just a fancy new Dialog</h1>";
+    this._dialog.classList.add(styles.makeFullScreen);
 
     this._elemOutput = document.createElement("output");
     this._elemOutput.style.display = "block";
 
+    this._dialog.appendChild(this.getPositionButtons());
     this._dialog.appendChild(this._btnSaveDialog);
     this._dialog.appendChild(this._btnCancelDialog);
 
@@ -41,6 +48,68 @@ export default class Placeholder {
     this._container.appendChild(this._btnShowDialog);
     this._container.appendChild(this._dialog);
     this._container.appendChild(this._elemOutput);
+
+  }
+
+  private setPosition = (event: Event): void => {
+    
+    let target = event.target as HTMLButtonElement;
+    
+    switch (target.innerText){
+      case 'top':
+        this._dialog.className = "";
+        this._dialog.classList.add(styles.showTop);
+        break;
+      case 'left':
+        this._dialog.className = "";
+        this._dialog.classList.add(styles.showLeft);
+        break;
+      case 'bottom':
+        this._dialog.className = "";
+        this._dialog.classList.add(styles.showBottom);
+        break;
+      case 'right':
+        this._dialog.className = "";
+        this._dialog.classList.add(styles.showRight);
+        break;
+      case 'fullscreen':
+        this._dialog.className = "";
+        this._dialog.classList.add(styles.makeFullScreen);
+        break;
+      case 'reset':
+        this._dialog.className = "";
+        break;
+      default:
+        console.debug('No Actions found')
+    }
+
+  }
+
+  private getPositionButtons(): HTMLElement {
+
+    let _posContainer = document.createElement("div");
+    
+    _posContainer.classList.add(styles.cont)
+    _posContainer.appendChild(
+      PlaceholderButton.get('top', this.setPosition)
+    );
+    _posContainer.appendChild(
+      PlaceholderButton.get('right', this.setPosition)
+    );
+    _posContainer.appendChild(
+      PlaceholderButton.get('bottom', this.setPosition)
+    );
+    _posContainer.appendChild(
+      PlaceholderButton.get('left', this.setPosition)
+    );
+    _posContainer.appendChild(
+      PlaceholderButton.get('fullscreen', this.setPosition)
+    );
+    _posContainer.appendChild(
+      PlaceholderButton.get('reset', this.setPosition)
+    );
+
+    return _posContainer;
 
   }
 

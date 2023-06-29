@@ -1,0 +1,29 @@
+.showLeft{
+    margin-right: auto;
+    margin-left: 0;
+    height: 100vh;
+}
+.showRight{
+    margin-right: 0;
+    margin-left: auto;
+    height: 100vh;
+}
+.showTop{
+    margin-top: 0;
+    margin-bottom: auto;
+    width: 100vw;
+}
+.showBottom{
+    margin-top: auto;
+    margin-bottom: 0;
+    width: 100vw;
+}
+.makeFullScreen{
+    width: 100vw;
+    height: 100vh;
+}
+.cont{
+    margin-block: 1rem;
+    display: flex;
+    gap: 1rem
+}

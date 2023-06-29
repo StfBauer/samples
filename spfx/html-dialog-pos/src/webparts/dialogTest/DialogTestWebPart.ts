@@ -3,7 +3,7 @@ import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 
 import Placeholder from './components/Placeholder';
 
-// import styles from './DialogTestWebPart.module.scss';
+import styles from './DialogTestWebPart.module.scss';
 
 export interface IDialogTestWebPartProps {
 }
@@ -14,6 +14,7 @@ export default class DialogTestWebPart extends BaseClientSideWebPart<IDialogTest
 
   public render(): void {
 
+    this.domElement.className = styles.dialogTest;
     this.domElement.appendChild(this.placeHolder.getPlaceholder())
 
   }
